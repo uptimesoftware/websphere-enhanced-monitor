@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uptime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.uptimesoftware.com/erdc/erdc erdc" xmlns="http://www.uptimesoftware.com/erdc/erdc" xmlns:upt="http://www.uptimesoftware.com/erdc/erdc" version="4.0" target_grouping="other">
+	<class>WebSphere Enhanced</class>
+	<exec>com.uptimesoftware.uptime.erdc.MonitorCustomScriptRunner</exec>
+	<elements>
+		<element name="process" parameter_type="input" data_type="string" gui_basic="1" range_type="0">
+			<control_options> size:40 </control_options>
+			<default_value>scripts/EnhancedWebSphere/ews-ms.bat</default_value>
+			<short_description>Script Name</short_description>
+			<long_description>Name of the script/binary/process to be executed by up.time </long_description>
+			<validation_rule><alphanumeric/></validation_rule>
+			<error_message><alphanumeric>required field</alphanumeric></error_message>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='WEBSPHERE_PORT' parameter_type='input' data_type='integer' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>WebSphere Port</short_description>
+			<long_description>The WebSphere Port</long_description>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='WEBSPHERE_SSL' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+		<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>Use SSL (HTTPS)</short_description>
+			<long_description>Use SSL (HTTPS)</long_description>
+			<gui_type><boolean/></gui_type>
+		</element>
+		<element name='USERNAME' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>Username</short_description>
+			<long_description>Username to login to WebSphere</long_description>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='PASSWORD' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>Password</short_description>
+			<long_description>Password</long_description>
+			<gui_type><password/></gui_type>
+		</element>
+		<element name='JVM' parameter_type='input' data_type='string' gui_basic='1' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<validation_rule/><error_message/>
+			<short_description>JVM</short_description>
+			<long_description>The JVM to be monitored</long_description>
+			<gui_type><string/></gui_type>
+		</element>
+		<element name='CPUUsage' parameter_type='output' data_type='integer' gui_basic='' range_type='0' units='%'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>CPU Usage</short_description>
+			<long_description>The percent of CPU resources that were used since the last query.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='HeapSize' parameter_type='output' data_type='integer' gui_basic='' range_type='0' units='kb'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Heap Size</short_description>
+			<long_description>The total amount of memory that is available for the Java Virtual Machine.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='UsedMemory' parameter_type='output' data_type='integer' gui_basic='' range_type='0' units='kb'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Used Memory</short_description>
+			<long_description>The amount of memory that is being used by the JVM.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='ActiveCount' parameter_type='output' data_type='integer' gui_basic='' range_type='0' units='thread'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Active Thread Count</short_description>
+			<long_description>The number of threads which are concurrently active.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='CommittedCount' parameter_type='output' data_type='integer' gui_basic='' range_type='0' units='transaction'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Committed Transaction</short_description>
+			<long_description>The total number of global transactions that have been committed.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='RolledBackCount' parameter_type='output' data_type='integer' gui_basic='' range_type='0' units='transaction'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Rolled Back Transaction</short_description>
+			<long_description>The total number of global transactions that have been rolled back.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='LiveCount' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units='session'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Servlet Session Live</short_description>
+			<long_description>The number of servlet sessions that are currently cached in memory.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='ConnectionPoolUseTime' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units='second'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Average Connection Used Time</short_description>
+			<long_description>The average time, in milliseconds, that a connection is used. The average use time is the difference between the time at which the connection is allocated and that time at which it is returned.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='ConnectionPoolSize' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Connection Pool Size</short_description>
+			<long_description>The size of the connection pool to the data source.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='ConnectionPoolFreePoolSize' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units=''>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Free Pool Size</short_description>
+			<long_description>The number of free connections in the pool.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='ConnectionPoolPercentUsed' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units='%'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Connection Pool Used</short_description>
+			<long_description>The percentage of the connection pool that is currently in use.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='ConnectionPoolWaitTime' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units='second'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Average Wait Time</short_description>
+			<long_description>The average time, in milliseconds, that a connection is used. The average time is the difference between the time at which the connection is allocated and the time at which it is returned.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><decimal/></gui_type>
+		</element>
+		<element name='ConnectionPoolCloseCount' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units='connection'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Closed Connection</short_description>
+			<long_description>The total number of connections that were closed.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name='ConnectionPoolWaitingThreadCount' parameter_type='output' data_type='ranged' gui_basic='' range_type='0' units='thread'>
+			<control_options>size:8</control_options>
+			<default_value></default_value>
+			<short_description>Waiting Threads</short_description>
+			<long_description>The number of threads that are currently waiting for a connection.</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+		<element name="timer" parameter_type="output" data_type="integer" gui_basic="0" range_type="0" units="ms">
+			<control_options>size:8</control_options>
+			<default_value/>
+			<short_description>Response time</short_description>
+			<long_description>Response time in ms</long_description>
+			<validation_rule/>
+			<error_message/>
+			<gui_type><integer/></gui_type>
+		</element>
+	</elements>
+	<help>When running a custom script check, note that the second parameter is always the name of the assigned host. The script that's executed should output each variable on it's own line, otherwise up.time won't be able to capture the appropriate information.</help>
+</uptime>
+
+
+
+
